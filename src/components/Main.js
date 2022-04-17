@@ -40,7 +40,6 @@ class Main extends Component {
               <th scope="col">Product ID</th>
               <th scope="col">Name</th>
               <th scope="col">Price</th>
-              <th scope="col">Owner</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -50,11 +49,10 @@ class Main extends Component {
                 <tr key={key}>
                 <th scope="row">{product.id.toString()}</th>
                 <td>{product.name}</td>
-                <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} Eth</td>
-                <td>{product.owner}</td>
+                <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} ETH</td>
                 <td>
                     { !product.purchased
-                    ? <button
+                    ? <button className="btn btn-primary"
                         name={product.id}
                         value={product.price}
                         onClick={(event) => {
