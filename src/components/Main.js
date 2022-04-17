@@ -5,7 +5,7 @@ class Main extends Component {
   render() {
     return (
       <div id="content">
-        <h1>Add Product</h1>
+        <h1 className='pt-4'>Add Product</h1>
         <form onSubmit={(event) => {
           event.preventDefault()
           const name = this.productName.value
@@ -33,14 +33,13 @@ class Main extends Component {
           <button type="submit" className="btn btn-primary">Add Product</button>
         </form>
         <p> </p>
-        <h2>Buy Product</h2>
+        <h1 className='pt-4'>Buy Product</h1>
         <table className="table">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">Price</th>
-              <th scope="col">Owner</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -50,11 +49,10 @@ class Main extends Component {
                 <tr key={key}>
                 <th scope="row">{product.id.toString()}</th>
                 <td>{product.name}</td>
-                <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} Eth</td>
-                <td>{product.owner}</td>
+                <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} ETH</td>
                 <td>
                     { !product.purchased
-                    ? <button
+                    ? <button className="btn btn-primary"
                         name={product.id}
                         value={product.price}
                         onClick={(event) => {
