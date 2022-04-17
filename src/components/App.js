@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import logo from '../logo.png';
 import './App.css';
 import Navbar from './Navbar';
 import Main from './Main';
@@ -90,6 +91,7 @@ class App extends Component {
         <Navbar account={this.state.account} />
         <div className="container-fluid mt-5">
           <div className="row">
+
             <main role="main" className="col-lg-12 d-flex">
               { this.state.loading
                 ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
@@ -99,6 +101,7 @@ class App extends Component {
                   purchaseProduct={this.purchaseProduct} />
               }
             </main>
+            
           </div>
         </div>
       </div>

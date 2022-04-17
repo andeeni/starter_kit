@@ -4,8 +4,8 @@ class Main extends Component {
 
   render() {
     return (
-      <div id="content">
-        <h1 className='pt-4'>Add Product</h1>
+      <div id="content" className='pl-4'>
+        <h2 className='pt-5 pb-3'>Add Product</h2>
         <form onSubmit={(event) => {
           event.preventDefault()
           const name = this.productName.value
@@ -21,7 +21,10 @@ class Main extends Component {
               placeholder="Product Name"
               required />
           </div>
-          <div className="form-group mr-sm-2">
+
+          
+
+          <div className="form-group mr-sm-2 pb-3">
             <input
               id="productPrice"
               type="text"
@@ -30,15 +33,16 @@ class Main extends Component {
               placeholder="Product Price"
               required />
           </div>
-          <button type="submit" className="btn btn-primary">Add Product</button>
+
+          <button type="submit" className="btn btn-primary ">Add Product</button>
         </form>
         <p> </p>
-        <h1 className='pt-4'>Buy Product</h1>
+        <h2 className='pt-4 pb-3'>Buy Product</h2>
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">Product ID</th>
-              <th scope="col">Name</th>
+              <th scope="col">ID</th>
+              <th scope="col">Product</th>
               <th scope="col">Price</th>
               <th scope="col"></th>
             </tr>
@@ -49,10 +53,10 @@ class Main extends Component {
                 <tr key={key}>
                 <th scope="row">{product.id.toString()}</th>
                 <td>{product.name}</td>
-                <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} ETH</td>
+                <td>{window.web3.utils.fromWei(product.price.toString(), 'Ether')} FMC</td>
                 <td>
                     { !product.purchased
-                    ? <button className="btn btn-primary"
+                    ? <button className="btn btn-primary pl-3 pr-3"
                         name={product.id}
                         value={product.price}
                         onClick={(event) => {
